@@ -7,18 +7,21 @@ import Barn_Testing from "./components/Barn_Testing.js";
 export default function App() {
   return (
     <Canvas
-      camera={{ position: [2, 0, 12.25], fov: 15 }}
       style={{
         backgroundColor: "white",
         width: "100vw",
         height: "100vh",
       }}
     >
-      <ambientLight intensity={1.25} />
-      <ambientLight intensity={0.1} />
-      <directionalLight intensity={0.4} />
+      <ambientLight intensity={0.5} />
+      <directionalLight intensity={1} position={[20, 40, 20]} />
+      <directionalLight intensity={1} position={[-20, -40, -20]} />
+      <directionalLight intensity={1} position={[-20, 40, -20]} />
+      <directionalLight intensity={1} position={[-20, -40, 20]} />
+      <directionalLight intensity={1} position={[20, -40, 20]} />
+      <directionalLight intensity={1} position={[20, -40, -20]} />
       <Suspense fallback={null}>
-        <Barn_Testing position={[0.025, -0.9, 0]} />
+        <Barn_Testing />
       </Suspense>
       <OrbitControls />
     </Canvas>
