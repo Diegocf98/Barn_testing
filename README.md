@@ -2,8 +2,10 @@
 
 3D model testing
 
-# SETUP DEMO
+# Set-Up Barn Demo
 
-*run the next comands:
-&nbsp*npm install
-&nbsp*npm start
+##Run the next comands:
+```
+npm install
+npm start
+```
