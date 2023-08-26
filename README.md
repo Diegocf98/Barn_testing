@@ -4,6 +4,6 @@
 
 # SETUP DEMO
 
-\*run the next comands:
-**npm install
-**npm start
+*run the next comands:
+&nbsp*npm install
+&nbsp*npm start
