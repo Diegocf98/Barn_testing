@@ -2,7 +2,7 @@
 
 3D model testing
 
-# SETUP DEMO
+# Set-Up Barn Demo
 
 \*run the next comands inside the next path "/Barn_testing/barn-3d-model"
 **npm install
