@@ -11,67 +11,93 @@ function Barn_Testing(props) {
     <group {...props} dispose={null}>
       {/* Top and buttom from the barn*/}
       <group scale={[0.008, 0.011, 0.01]}>
-        <mesh
+        {/*this mesh of the code, is broken by the color when you do zoom in and zoom out */}
+        {/* <mesh
           geometry={nodes.Mesh.geometry}
           material={materials.Siding_LPSmartPanelSiding}
-        />
+        >
+          <meshStandardMaterial color="blue" />
+        </mesh>*/}
+
         <mesh
           geometry={nodes.Mesh_1.geometry}
           material={materials.Siding_BoardandBatten}
-        />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
         <mesh
           geometry={nodes.Mesh_2.geometry}
           material={materials.Roofing_Shingles_DesertTan}
-        />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
         <mesh
           geometry={nodes.Mesh_3.geometry}
           material={materials.Wood_Trim_Interior}
-        />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
         <mesh
           geometry={nodes.Mesh_4.geometry}
           material={materials.Wood_InteriorFloor}
-        />
-        <mesh geometry={nodes.Mesh_5.geometry} material={materials.Wood_Trim} />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
+        <mesh geometry={nodes.Mesh_5.geometry} material={materials.Wood_Trim}>
+          <meshStandardMaterial color="grey" />
+        </mesh>
         <mesh
           geometry={nodes.Mesh_6.geometry}
           material={materials.Metal_Interior}
-        />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
         <mesh
           geometry={nodes.Mesh_7.geometry}
           material={materials.Metal_Exterior}
-        />
+        >
+          <meshStandardMaterial color="grey" />
+        </mesh>
       </group>
       {/* body */}
       <group scale={[0.008, 0.011, 0.01]}>
         <mesh
           geometry={nodes.Mesh001.geometry}
           material={materials.Wood_Trim_Interior}
-        />
+        >
+          <meshStandardMaterial color="white" />
+        </mesh>
         <mesh
+          material-color={"white"}
           geometry={nodes.Mesh001_1.geometry}
           material={materials.Wood_Interior}
-        />
+        >
+          <meshStandardMaterial color="white" />
+        </mesh>
         <mesh
+          material-color={"white"}
           geometry={nodes.Mesh001_2.geometry}
           material={materials.Wood_Trim}
-        />
+        >
+          <meshStandardMaterial color="white" />
+        </mesh>
         <mesh
-          material-color={props.wall1_color ? "red" : "white"}
+          material-color={props.wall1_color ? "blue" : "white"}
           geometry={nodes.LoftedBarn_6Wall_10x12_None_Wall1.geometry}
           material={materials.Siding_LPSmartPanelSiding1}
         />
         <mesh
-          material-color={props.wall2_color ? "red" : "white"}
+          material-color={props.wall2_color ? "blue" : "white"}
           geometry={nodes.LoftedBarn_6Wall_10x12_None_Wall2.geometry}
           material={materials.Siding_LPSmartPanelSiding2}
         />
         <mesh
-          material-color={props.wall3_color ? "red" : "white"}
+          material-color={props.wall3_color ? "blue" : "white"}
           geometry={nodes.LoftedBarn_6Wall_10x12_None_Wall3.geometry}
           material={materials.Siding_LPSmartPanelSiding3}
         />
         <mesh
-          material-color={props.wall4_color ? "red" : "white"}
+          material-color={props.wall4_color ? "blue" : "white"}
           geometry={nodes.LoftedBarn_6Wall_10x12_None_Wall4.geometry}
           material={materials.Siding_LPSmartPanelSiding4}
         />
@@ -114,15 +140,16 @@ export default function App() {
 
       <Canvas
         className="canvas"
-        camera={{ position: [-25, 5, 30.25], fov: 12 }}
+        camera={{ position: [-15, 7, 25], fov: 15 }}
         style={{
           backgroundColor: "#ffffff",
           width: "100%",
           height: "150vh",
         }}
       >
-        <ambientLight intensity={0.6} />
-        <directionalLight intensity={0.5} />
+        <ambientLight intensity={1.25} />
+        <ambientLight intensity={0.1} />
+        <directionalLight intensity={0.4} position={[0, 20, 0]} />
         <Suspense fallback={null}>
           <Barn_Testing
             wall1_color={wall1_color}
